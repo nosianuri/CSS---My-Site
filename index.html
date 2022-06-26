@@ -69,9 +69,9 @@
 
 
           <h3>Web Developer</h3>
-          <p> I have a qualification from Programming Hero and commonwealth of learning courses experience as a web
-            developer. I have extensive knowledge of C++, javascript,Bootstrap,Tailwind,React,
-            NodeJS,MongoDB,Express,Firebase and outstanding of MERN Stack .</p>
+          <p> I have a qualification from some Web Development courses experience as a web
+            developer.I have extensive knowledge of C++, javascript, Bootstrap, Tailwind, React,
+            NodeJS, MongoDB, Express, Firebase and outstanding of MERN Stack .</p>
 
         </div>
         <div class="skill-row">
@@ -146,7 +146,7 @@
         <h2>My Projects</h2>
         <p class="intro">The best part about my website is every day I'll build a new projects. Here are just some of the projects I make by using Html, CSS, JavaScript, React, firebase, mongoDB, Express, Node.js and so more.</p>
         <div class="box-set">
-          <figure class="snip0015">
+          <figure class="snip0015 col-lg-4 col-md-12 col-sm-12">
             <img src="assests/images/port2.png" alt="sample38" />
             <figcaption>
               <h4> # Subaru-MF <span>MERN</span> Stack</h4>
@@ -156,7 +156,7 @@
             </figcaption>           
           </figure>
           
-          <figure class="snip0015">
+          <figure class="snip0015 col-lg-4 col-md-12 col-sm-12">
             <img src="assests/images/Port1.png" alt="sample39" />
             <figcaption>
               <h4> # Phone-Warehouse <span>MERN</span>Stack </h4>
@@ -165,7 +165,7 @@
               <a href="warehouse.html">Details</a>
             </figcaption>
           </figure>
-          <figure class="snip0015">
+          <figure class="snip0015 col-lg-4 col-md-12 col-sm-12">
             <img src="assests/images/port3.png" alt="sample40" />
             <figcaption>
               <h4> # Independence- <span>Service</span>-provider</h4>
@@ -334,8 +334,36 @@
         <p class="contact-message"> Work I've done that resides out there, somewhere in the vast virtual space of the
           Internet.</p>
         <a class="btn" href="contact-me.html">Contact Me</a>
-
-        <form class="contact-message" action="https://formsubmit.co/nosiaakter1@gmail.com" method="POST">
+          <p >OR</p>
+        <form id="submit-form" class="contact-message" action="">
+          <!-- <input type="hidden" name="_subject" value="New email woooo!"> -->
+          <input class=" msg" type="email" name="email" placeholder="Email Address" required>
+          <!-- <input type="hidden" name="_next" value="https://nosia-akter.com/pages/thankyou.html"> -->
+          <input class=" msg" type="text" name="message" placeholder="write your message here" required>
+          <div class="resume">
+            <button class="btn" type="submit">Send</button>
+          </div>
+        </form>
+        <script>
+          $("#submit-form").submit((e)=>{
+              e.preventDefault()
+              $.ajax({
+                  url:"https://script.google.com/macros/s/AKfycbwC2IytawMaOrkp2BSNBfKug-DYcUEKgwAj5zj-s5TULpjyvf7I1E5p1NhKHWft4AA/exec",
+                  data:$("#submit-form").serialize(),
+                  method:"post",
+                  success:function (response){
+                      alert("Form submitted successfully")
+                      window.location.reload()
+                      //window.location.href="https://google.com"
+                  },
+                  error:function (err){
+                      alert("Something Error")
+      
+                  }
+              })
+          })
+      </script>
+        <!-- <form class="contact-message" action="https://formsubmit.co/nosiaakter1@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New email woooo!">
           <input class=" msg" type="email" name="email" placeholder="Email Address" required>
           <input type="hidden" name="_next" value="https://nosia-akter.com/pages/thankyou.html">
@@ -343,7 +371,7 @@
           <div class="resume">
             <button class="btn" type="submit">Send</button>
           </div>
-        </form>
+        </form> -->
       </div>
 
 

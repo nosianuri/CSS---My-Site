@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Contact me</title>
       <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -19,9 +20,9 @@
     <p><img src="icon/location.png" alt=""> : Bogura, Bangladesh</p>
     <p><img src="icon/telephone.png" alt="">  : (+880) 1703978076</p>
     <p><img src="icon/mail.png" alt=""> : nosiaakter1@gmail.com</p>
-    <p><a href="https://github.com/nosianuri">github</a>|<a href="https://www.linkedin.com/in/nosia-akter-9b7606235/">Linkedin</a>|</p>
+    <p><a href="https://github.com/nosianuri">github</a>|<a href="https://www.linkedin.com/in/nosia-akter-9b7606235/">Linkedin</a></p>
       <hr>
-    <form class="" action="https://mail.google.com/mail/u/0/#inbox" method="post">
+    <!-- <form class="" action="https://mail.google.com/mail/u/0/#inbox" method="post">
        <label for="">Your Name:</label>
        <input class="contact" type="text" name="yourName" value=""><br>
        <label>Your Email:</label>
@@ -29,7 +30,64 @@
        <label>Your Message:</label><br>
        <textarea name="yourMessage" rows="10" cols="30"></textarea><br>
       <input class="btn resume" type="submit" name="">
-    </form>
+    </form> -->
+
+
+
+    <section id="font-family">
+      <div class="contact-section">
+        <div class="contact-container">
+          <form id="submit-form" action="">
+    
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName">
+            </div>
+    
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName">
+            </div>
+    
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email">
+            </div>
+    
+            <div class="form-group">
+              <label for="subject">Message</label>
+              <textarea name="message" id="subject" cols="30" rows="10"></textarea>
+            </div>
+    
+            <button class="send" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwC2IytawMaOrkp2BSNBfKug-DYcUEKgwAj5zj-s5TULpjyvf7I1E5p1NhKHWft4AA/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
+      <div id="status" class="success">Success</div>
+    </section>
+
+
+
+
     <div class="bottom-container">
       <a class="footer-link" href="https://www.linkedin.com/in/nosia-akter-9b7606235/">linkedin</a>
       <a class="footer-link" href="https://www.facebook.com/nosia.nuri.54/">facebook</a>
